@@ -4,7 +4,7 @@
   <title>JSON to Table</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="tutorial.css">
+  <link rel="stylesheet" href="json-to-table.css">
 </head>
 <body>
   <header>
@@ -17,7 +17,7 @@
 <script type="module">
 import {jsonToTable} from './json-to-table.js'
 
-let response = await fetch('drag_and_drop-events.json')
+let response = await fetch('sample.json')
 let data = await response.json()
 
 document.querySelector('table').replaceWith(jsonToTable(data))

@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "title": "Some colors",
+    "columns": [
+      {"key": "name","label": "Color"},
+      {"key": "hex","label": "Hex code"}
+    ]
+  },
+  "colors": [
+    {
+      "name": "red",
+      "hex": "#f00"
+    },
+    {
+      "name": "purple",
+      "hex": "#f0f"
+    },
+    {
+      "name": "red",
+      "hex": "#00f"
+    }
+  ]
+}

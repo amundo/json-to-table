@@ -1,15 +1,28 @@
 export const jsonToTable = (data) => {
+  let items;
+  for (let key in data) {
+      if (key !== 'metadata') {
+          items = data[key];
+          break;
+      }
+  }
+  let metadata = data.metadata
+
   let table = document.createElement('table')
   let thead = document.createElement('thead')
   let tbody = document.createElement('tbody')
   let headerRow = document.createElement('tr')
-  let caption = document.createElement('caption')
-  table.append(caption)
-  table.data = data
-  caption.textContent = data.metadata.title
 
-  let columns = data.metadata.columns
+  table.data = items
 
+  if(metadata.title){
+    let caption = document.createElement('caption')
+    caption.textContent = data.metadata.title
+    table.append(caption)
+  }
+
+
+  let columns = metadata.columns
   if (columns) {
     columns.forEach((column) => {
       let th = document.createElement('th')
@@ -17,7 +30,7 @@ export const jsonToTable = (data) => {
       headerRow.appendChild(th)
     })
   } else {
-    Object.keys(data.events[0]).forEach((key) => {
+    Object.keys(items[0]).forEach((key) => {
       let th = document.createElement('th')
       th.textContent = key
       headerRow.appendChild(th)
@@ -27,17 +40,17 @@ export const jsonToTable = (data) => {
   thead.appendChild(headerRow)
   table.appendChild(thead)
 
-  data.events.forEach((event) => {
+  items.forEach((item) => {
     let row = document.createElement('tr')
     if (columns) {
       columns.forEach((column) => {
         let td = document.createElement('td')
         td.dataset[column.key] = column.key
-        td.textContent = event[column.key]
+        td.textContent = item[column.key]
         row.appendChild(td)
       })
     } else {
-      Object.values(event).forEach((value) => {
+      Object.values(item).forEach((value) => {
         let td = document.createElement('td')
         td.dataset[column.key] = column.key
         td.textContent = value
