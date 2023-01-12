@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "title": "Catalog of Drag and Drop events",
+    "columns": [
+      {
+        "key": "number",
+        "label": "Number"
+      },
+      {
+        "key": "name",
+        "label": "Event name"
+      },
+      {
+        "key": "continuous",
+        "label": "Fires continuously?"
+      },
+      {
+        "key": "on",
+        "label": "Fires on…"
+      },
+      {
+        "key": "description",
+        "label": "When"
+      },
+      {
+        "key": "preventDefault",
+        "label": "preventDefault()?"
+      },
+      {
+        "key": "mdn",
+        "label": "Documentation"
+      }
+    ]
+  },
+  "events": [
+    {
+      "number": 1,
+      "name": "dragstart",
+      "continuous": false,
+      "on": "dragged-element",
+      "description": "fired when the user starts dragging an element",
+      "preventDefault": "false",
+      "mdn": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragstart_event"
+    },
+    {
+      "number": 2,
+      "name": "drag",
+      "continuous": false,
+      "on": "dragged-element",
+      "description": "fired continuously as the element is being dragged",
+      "preventDefault": "false",
+      "mdn": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drag_event"
+    },
+    {
+      "number": 3,
+      "name": "dragenter",
+      "continuous": false,
+      "on": "drop-zone",
+      "description": "fired when the dragged element enters a valid drop-zone",
+      "preventDefault": "usually true",
+      "mdn": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragenter_event"
+    },
+    {
+      "number": 4,
+      "name": "dragover",
+      "continuous": false,
+      "on": "drop-zone",
+      "description": "fired when the dragged element is over a valid drop-zone",
+      "preventDefault": "usually true",
+      "mdn": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragover_event"
+    },
+    {
+      "number": 5,
+      "name": "dragleave",
+      "continuous": false,
+      "on": "drop-zone",
+      "description": "fired when the dragged element leaves a valid drop-zone",
+      "preventDefault": "false",
+      "mdn": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragleave_event"
+    },
+    {
+      "number": 6,
+      "name": "drop",
+      "continuous": false,
+      "on": "drop-zone",
+      "description": "fired when the element is dropped on a valid drop-zone",
+      "preventDefault": "false",
+      "mdn": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event"
+    },
+    {
+      "number": 7,
+      "name": "dragend",
+      "continuous": false,
+      "on": "dragged-element",
+      "description": "fired when the user finishes dragging the element",
+      "preventDefault": "false",
+      "mdn": "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragend_event"
+    }
+  ]
+}

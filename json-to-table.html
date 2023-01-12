@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JSON to Table</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="tutorial.css">
+</head>
+<body>
+  <header>
+    <h1>
+      A function to render an array of objects as an HTML table. Very basic.
+    </h1>
+  </header>
+  <table></table>
+    
+<script type="module">
+import {jsonToTable} from './json-to-table.js'
+
+let response = await fetch('drag_and_drop-events.json')
+let data = await response.json()
+
+document.querySelector('table').replaceWith(renderTable(data))
+</script>  
+  
+</body>
+</html>
