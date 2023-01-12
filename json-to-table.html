@@ -20,7 +20,7 @@ import {jsonToTable} from './json-to-table.js'
 let response = await fetch('drag_and_drop-events.json')
 let data = await response.json()
 
-document.querySelector('table').replaceWith(renderTable(data))
+document.querySelector('table').replaceWith(jsonToTable(data))
 </script>  
   
 </body>
